@@ -9,7 +9,7 @@ services:
       - ./jenkins.yml:/jenkins.yml
       - ./id_rsa:/secrets/id_rsa
       - ./adminpassword:/secrets/adminpassword
-      - jenkins-data:/var/jenkins_home
+      - /home/jenkins/jenkins-data:/var/jenkins_home
     ports:
       - 8080:8080
   jenkins-agent:
@@ -21,6 +21,3 @@ services:
         DOCKER_GROUP: '${DOCKER_GROUP}'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-
-volumes:
-  jenkins-data:
