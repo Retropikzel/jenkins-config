@@ -82,3 +82,22 @@ jobs:
           }
         }
       }
+  - script: >
+      folder('srfi_explorations') {
+        displayName: 'srfi-explorations'
+      }
+  - script: >
+      multibranchPipelineJob('srfi_explorations/build') {
+        displayName: 'R7RS-SRFI'
+        branchSources {
+          git {
+              id('github')
+              remote('https://github.com/schemeorg-community/index.scheme.or://github.com/srfi-explorations/r7rs-srfi.git')
+          }
+        }
+        orphanedItemStrategy {
+          discardOldItems {
+              numToKeep(10)
+          }
+        }
+      }
