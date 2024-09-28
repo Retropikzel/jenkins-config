@@ -87,7 +87,7 @@ jobs:
         displayName: 'srfi-explorations'
       }
   - script: >
-      multibranchPipelineJob('srfi_explorations/build') {
+      multibranchPipelineJob('srfi_explorations/r7rs-srfi') {
         displayName: 'R7RS-SRFI'
         branchSources {
           git {
