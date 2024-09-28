@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: "Jenkins CASC"
+  systemMessage: "Scheme Jenkins"
   numExecutors: 0
   nodes:
     - permanent:
