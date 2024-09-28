@@ -4,6 +4,7 @@
 
 . Run `create-keys.sh` to generate SSH keys used for Jenkins controller to talk to Jenkins agent;
 . Run `echo -n 'password' > adminpassword` to setup password for admin user (watchout to not add newlines);
+. Run `echo "DOCKER_GROUP=$(getent group docker | cut -d: -f3)" > .env` to setup agent's group so it can access docker socket;
 . Run `docker compose up -d`;
 . (Optionally) Add `update.sh` script to be run by cron periodically.
 
@@ -21,6 +22,7 @@ Jobs often need secrets, however these secrets should be scoped per-user / proje
 
 == Points of Improvement
 
+. Fix the goofy docker group mess;
 . Externalize user management (eg LDAP);
 . Use vaults for secret storage;
 . Change agent from persistent ssh to an adhoc provisioned instance.

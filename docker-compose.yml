@@ -17,6 +17,8 @@ services:
     build:
       context: .
       dockerfile: jenkins-agent.Dockerfile
+      args:
+        DOCKER_GROUP: '${DOCKER_GROUP}'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
