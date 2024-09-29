@@ -1,5 +1,4 @@
 #!/bin/bash
 
-git pull
-docker-compose up --build
+curl -X POST "https://jenkins.staging.scheme.org/reload-configuration-as-code/?casc-reload-token=${CASC_RELOAD_TOKEN}"
 
