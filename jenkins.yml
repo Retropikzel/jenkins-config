@@ -26,9 +26,15 @@ jenkins:
           name: "authenticated"
           permissions:
           - "Job/Read"
+          - "Job/Build"
+          - "Job/Cancel"
           - "Overall/Read"
       - user:
           name: "admin"
+          permissions:
+          - "Overall/Administer"
+      - user:
+          name: "lassik_admin"
           permissions:
           - "Overall/Administer"
       - user:
