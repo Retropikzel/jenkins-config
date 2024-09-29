@@ -110,6 +110,7 @@ jobs:
         displayName: 'r7rs-pffi'
         branchSources {
           git {
+              id('git')
               remote('https://git.sr.ht/~retropikzel/r7rs-pffi')
           }
         }
