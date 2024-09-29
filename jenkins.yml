@@ -101,3 +101,22 @@ jobs:
           }
         }
       }
+  - script: >
+      folder('r7rs_pffi') {
+        displayName: 'r7rs-pffi'
+      }
+  - script: >
+      multibranchPipelineJob('r7rs-pffi/r7rs-pffi') {
+        displayName: 'r7rs-pffi'
+        branchSources {
+          git {
+              id('github')
+              remote('https://git.sr.ht/~retropikzel/r7rs-pffi')
+          }
+        }
+        orphanedItemStrategy {
+          discardOldItems {
+              numToKeep(10)
+          }
+        }
+      }
