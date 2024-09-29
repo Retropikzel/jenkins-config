@@ -106,7 +106,7 @@ jobs:
         displayName: 'r7rs-pffi'
       }
   - script: >
-      multibranchPipelineJob('r7rs-pffi/r7rs-pffi') {
+      multibranchPipelineJob('r7rs_pffi/r7rs-pffi') {
         displayName: 'r7rs-pffi'
         branchSources {
           git {
