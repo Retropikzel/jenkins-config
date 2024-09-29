@@ -8,5 +8,5 @@ then
     docker-compose stop
 fi
 
-docker-compose up -d --build
+docker-compose up --build
 
