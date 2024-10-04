@@ -19,6 +19,23 @@ jenkins:
             sshHostKeyVerificationStrategy:
               manuallyTrustedKeyVerificationStrategy:
                 requireInitialManualTrust: false
+    - permanent:
+        mode: NORMAL
+        name: "agent2"
+        labelString: "debian-x86_64"
+        numExecutors: 16
+        remoteFS: "/home/jenkins/agent"
+        launcher:
+          SSHLauncher:
+            host: "retropikzel.madhacker.biz"
+            port: 5522
+            credentialsId: agent_ssh
+            launchTimeoutSeconds: 60
+            maxNumRetries: 3
+            retryWaitTime: 30
+            sshHostKeyVerificationStrategy:
+              manuallyTrustedKeyVerificationStrategy:
+                requireInitialManualTrust: false
   authorizationStrategy:
     projectMatrix:
       entries:
