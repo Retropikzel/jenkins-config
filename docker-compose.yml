@@ -6,7 +6,6 @@ services:
     environment:
       - CASC_JENKINS_CONFIG=/jenkins.yml
       - CASC_RELOAD_TOKEN=$CASC_RELOAD_TOKEN
-      - JAVA_ARGS=-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP="default-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' 'unsafe-inline' data:;"
     volumes:
       - ./jenkins.yml:/jenkins.yml
       - ./id_rsa:/secrets/id_rsa
