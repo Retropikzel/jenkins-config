@@ -106,16 +106,31 @@ jobs:
         }
       }
   - script: >
-      folder('srfi_explorations') {
-        displayName: 'srfi-explorations'
+      folder('r7rs') {
+        displayName: 'r7rs'
       }
   - script: >
-      multibranchPipelineJob('srfi_explorations/r7rs-srfi') {
+      multibranchPipelineJob('r7rs/r7rs-srfi') {
         displayName: 'R7RS-SRFI'
         branchSources {
           git {
               id('github')
               remote('https://github.com/srfi-explorations/r7rs-srfi.git')
+          }
+        }
+        orphanedItemStrategy {
+          discardOldItems {
+              numToKeep(10)
+          }
+        }
+      }
+  - script: >
+      multibranchPipelineJob('r7rs/r7rs-tests') {
+        displayName: 'r7rs-tests'
+        branchSources {
+          git {
+              id('github')
+              remote('https://github.com/Retropikzel/r7rs-tests.git')
           }
         }
         orphanedItemStrategy {
