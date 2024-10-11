@@ -177,3 +177,37 @@ jobs:
           }
         }
       }
+  - script: >
+      folder('rinne') {
+        displayName: 'rinne'
+      }
+  - script: >
+      multibranchPipelineJob('rinne/snow-fort-guix-channel') {
+        displayName: 'snow-fort-guix-channel'
+        branchSources {
+          git {
+              id('git')
+              remote('https://gitea.scheme.org/Rinne/snow-fort-guix-channel.git')
+          }
+        }
+        orphanedItemStrategy {
+          discardOldItems {
+              numToKeep(10)
+          }
+        }
+      }
+  - script: >
+      multibranchPipelineJob('rinne/snow-fort-windows-installer') {
+        displayName: 'snow-fort-windows-installer'
+        branchSources {
+          git {
+              id('git')
+              remote('https://gitea.scheme.org/Rinne/snow-fort-windows-installer.git')
+          }
+        }
+        orphanedItemStrategy {
+          discardOldItems {
+              numToKeep(10)
+          }
+        }
+      }
